@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components</title>
+    <style>
+      *:where(:not(iframe, canvas, img, svg, video, tooltip-notify, iga-tab):not(svg
+            *, tooltip-notify *, iga-tab *)) {
+        all: unset;
+        display: revert;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.5;
+        font-weight: 300;
+        background-color: rgb(242, 242, 242);
+        margin: 20px 0;
+      }
+      h1 {
+        font-size: 20px;
+        max-width: min(1200px, 96vw);
+        margin: auto;
+      }
+      h2 {
+        font-size: 18px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      code {
+        font-family: monospace;
+        font-size: 18px;
+        background-color: beige;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+      .section-card {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-evenly;
+        margin: 60px auto 20px;
+        width: min(1200px, 92vw);
+      }
+      .section-tab {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 60px auto 20px;
+        width: min(1400px, 96vw);
+      }
+      @media (min-width: 1024px) {
+        .section-tab {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .section-tooltip {
+        margin: 60px auto 20px;
+        width: min(1200px, 92vw);
+      }
+
+      .btn {
+        font-size: 20px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 10px 40px;
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+      }
+      .btn--tomato {
+        background-color: tomato;
+      }
+      .btn--purple {
+        background-color: purple;
+      }
+      .btn--brown {
+        background-color: brown;
+      }
+      .card {
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 16px;
+        margin-bottom: 16px;
+        width: min(360px, 98vw);
+        display: grid;
+        gap: 10px;
+      }
+      .card__content:empty {
+        --color: rgb(199, 199, 199);
+        --width: 100%;
+        --width-line: 250px;
+        --height-rectangle: 150px;
+        --height-line: 24px;
+        --gutter: 10px;
+        --computed-circle-rad: calc(var(--height-line) * 0.5);
+        --computed-height: calc(
+          var(--height-rectangle) + var(--gutter) + var(--height-line) +
+            calc(1.5 * var(--gutter))
+        );
+        height: var(--computed-height);
+        background-image: linear-gradient(0.9turn, #fff, transparent),
+          linear-gradient(var(--color), var(--color)),
+          radial-gradient(
+            var(--height-line) circle at var(--computed-circle-rad)
+              var(--computed-circle-rad),
+            var(--color) 50%,
+            transparent 50%
+          ),
+          linear-gradient(var(--color), var(--color));
+        background-size: var(--width) var(--computed-height),
+          var(--width) var(--height-rectangle),
+          var(--height-line) var(--height-line),
+          var(--width-line) var(--height-line);
+        background-position: var(--width) 0, 0 0,
+          0px calc(var(--height-rectangle) + var(--gutter)),
+          calc(var(--height-line) + var(--gutter))
+            calc(var(--height-rectangle) + var(--gutter));
+        background-repeat: no-repeat;
+      }
+    </style>
+    <script src="./js/canvas/CanvasDraw.js" type="module" defer></script>
+    <script src="./js/tab/app.js" type="module" defer></script>
+    <script src="./js/tooltip/tooltip-notify.js" type="module" defer></script>
+  </head>
+  <body>
+    <canvas-draw particles="90" max-distance-join-particles="80"></canvas-draw>
+    <h1 class="text-center">
+      Safari decides not to support Web components
+      <br />
+      Edit attribute <code>particles</code> and
+      <code>max-distance-join-particles</code>
+      <br />
+      Caution with values of <code>particles > 150</code> and
+      <code>max-distance-join-particles > 150</code>
+      <br />
+      This is Canvas with <code>requestAnimationFrame</code>
+    </h1>
+    <section class="section-card">
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--tomato" type="button">
+          Tomato
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--purple" type="button">
+          Purple
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--brown" type="button">Brown</button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--tomato" type="button">
+          Tomato
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--purple" type="button">
+          Purple
+        </button>
+      </article>
+      <article class="card">
+        <h2>Title Card</h2>
+        <div class="card__content"></div>
+        <button class="js-particles btn btn--brown" type="button">Brown</button>
+      </article>
+    </section>
+
+    <style>
+      [aria-selected="true"] {
+        --color-tab-foreground-active: #fff;
+      }
+      [slot="panel"]:empty {
+        --width: 100%;
+        height: 250px;
+        background: linear-gradient(0.75turn, #fff, transparent),
+          linear-gradient(#eee, #eee),
+          radial-gradient(38px circle at 19px 19px, #eee 50%, transparent 51%),
+          linear-gradient(#eee, #eee);
+        background-repeat: no-repeat;
+        background-size: var(--width) 250px, var(--width) 150px, 100px 100px,
+          225px 30px;
+        background-position: var(--width) 0, 0 0, 0px 160px, 50px 165px;
+      }
+    </style>
+    <section class="section-tab">
+      <h2 class="text-center" style="grid-column: 1/-1">Tab Webcomponent</h2>
+      <div>
+        <iga-tab active="2" style="--color-tab-background-active: #e66c4d">
+          <div slot="group-tabs" role="tablist">
+            <iga-tab-item>
+              <span>Tab 1</span>
+            </iga-tab-item>
+            <iga-tab-item>
+              <span>Tab 2</span>
+            </iga-tab-item>
+            <iga-tab-item>
+              <span>Third tab</span>
+            </iga-tab-item>
+            <iga-tab-item></iga-tab-item>
+          </div>
+          <main slot="group-panels" class="tabs__panels">
+            <iga-tab-panel>
+              <div slot="panel">
+                <p>
+                  1 Lorem, ipsum consectetur dolor sit amet consectetur
+                  adipisicing elit. Quia deleniti quisquam similique a rerum.
+                </p>
+                <p>
+                  2 Lorem ipsum dolor sit amet c commodi, harum distinctio nulla
+                  quibusdam dolorum consequatur minus. Quibusdam, sit?
+                </p>
+              </div>
+            </iga-tab-panel>
+            <iga-tab-panel>
+              <div slot="panel">
+                <p>
+                  3 Lorem, ipsum dolor sit actetur adipisicing elit. Quia
+                  deleniti quisquam similique a rerum.
+                </p>
+                <p>
+                  4 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Sint maxime commodi, harum distinctio nulla quibusdam dolorum
+                  consequatur minus. Quibusdam, sit?
+                </p>
+              </div>
+            </iga-tab-panel>
+            <iga-tab-panel>
+              <div slot="panel"></div>
+            </iga-tab-panel>
+            <iga-tab-panel>
+              <div slot="panel">
+                <p>5 Lorem ipsum dolor sit amet c commodi, harum</p>
+                <img src="https://dummyimage.com/560x180/D2B48C/fff" alt="" />
+              </div>
+            </iga-tab-panel>
+          </main>
+        </iga-tab>
+      </div>
+      <div>
+        <iga-tab justify="space-evenly">
+          <div slot="group-tabs" role="tablist">
+            <iga-tab-item>
+              <span>This That</span>
+            </iga-tab-item>
+            <iga-tab-item>
+              <span>That Those</span>
+            </iga-tab-item>
+            <iga-tab-item>
+              <span>Last Tab</span>
+            </iga-tab-item>
+          </div>
+          <main slot="group-panels" class="tabs__panels">
+            <iga-tab-panel>
+              <div slot="panel">
+                <h1>This is panel 1</h1>
+                <p>
+                  1 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quia deleniti quisquam similique a rerum.
+                </p>
+                <p>
+                  2 Lorem ipsum dolot maxime commodi, harum distinctio nulla
+                  quibusdam dolorum consequatur minus. Quibusdam, sit?
+                </p>
+              </div>
+            </iga-tab-panel>
+            <iga-tab-panel>
+              <div slot="panel">
+                <p>
+                  3 Lorem, ipsum dolor sit actetur adipisicing elit. Quia
+                  deleniti quisquam similique a rerum.
+                </p>
+                <p>
+                  4 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Sint maxime commodi, harum distinctio nulla quibusdam dolorum
+                  consequatur minus. Quibusdam, sit?
+                </p>
+              </div>
+            </iga-tab-panel>
+            <iga-tab-panel>
+              <div slot="panel"></div>
+            </iga-tab-panel>
+          </main>
+        </iga-tab>
+      </div>
+    </section>
+
+    <section class="section-tooltip">
+      <h1 class="text-center">Tooltip Webcomponent</h1>
+      <h2 class="text-center" style="color: rebeccapurple">
+        Aplicado a un ejemplo
+        <tooltip-notify fill="tomato" bullet-color="purple" count="5">
+          <li>
+            <span
+              ><strong>Automated builds</strong> from personal or public Git
+              repos</span
+            >
+          </li>
+          <li>
+            <span><strong>Deploy</strong> to global edge network</span>
+          </li>
+          <li>
+            <span
+              >Live site previews with a <strong>collaboration UI</strong> for
+              team members</span
+            >
+          </li>
+          <li>
+            <span><strong>Instant rollbacks</strong> to any version</span>
+          </li>
+          <li>
+            <span
+              ><strong>Deploy static assets</strong> & dynamic serverless
+              functions</span
+            >
+          </li>
+        </tooltip-notify>
+        tooltip
+      </h2>
+      <h2 class="text-center" style="color: chocolate">
+        Aplicado a otro ejemplo
+        <tooltip-notify fill="red" count="3">
+          <li>
+            <span><strong>Deploy</strong> to global edge network</span>
+          </li>
+          <li>
+            <span><strong>Instant rollbacks</strong> to any version</span>
+          </li>
+          <li>
+            <span
+              ><strong>Deploy static assets</strong> & dynamic serverless
+              functions</span
+            >
+          </li>
+        </tooltip-notify>
+        tooltip
+      </h2>
+    </section>
+  </body>
+</html>
