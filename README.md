@@ -31,7 +31,7 @@ En la raiz del proyecto se crea una carpeta <code>.storybook</code> que por defe
   <li><code>preview.js</code>: para la configuración de <code>actions</code> y <code>controls</code></li> del previsualizador de stories
 </ul>
 
-Hasta aquí lo básico, no hay que tocar mucho. En mi caso eliminé los ejemplos, ajuste de rutas a las stories y añadido un nuevo <a href="https://github.com/ljcl/storybook-addon-cssprops" target="_blank" rel="noopener">addons de Custom Properties de CSS</a> para que se pueda personalizar las stories mediante variables CSS
+Hasta aquí lo básico, no hay que tocar mucho. En mi caso eliminé los ejemplos, ajuste de rutas a las stories y añadido un nuevo <a href="https://github.com/ljcl/storybook-addon-cssprops">addons de Custom Properties de CSS</a> para que se pueda personalizar las stories mediante variables CSS
 
 ## Creación de stories con Web Components en storybook
 
@@ -40,9 +40,9 @@ Hasta aquí lo básico, no hay que tocar mucho. En mi caso eliminé los ejemplos
 Lo primero comentar que he usado tres Web Components que hice hace tiempo y quería ver que tal sería incorporarlos en storybook. Pongo enlace a entradas de Blog:
 
 <ul class="list-bullets">
-  <li><a href="/blog/webcomponent-canvas-particles/">Componente Web con Partículas en lienzo Canvas</a></li>
-  <li><a href="/blog/tab-slots-web-component/">Tab Web component con Slots</a></li>
-  <li><a href="/blog/webcomponent-tooltip-notification/">Webcomponent para tooltip notification</a></li>
+  <li><a href="https://ivanalbizu.eu/blog/webcomponent-canvas-particles/">Componente Web con Partículas en lienzo Canvas</a></li>
+  <li><a href="https://ivanalbizu.eu/blog/tab-slots-web-component/">Tab Web component con Slots</a></li>
+  <li><a href="https://ivanalbizu.eu/blog/webcomponent-tooltip-notification/">Webcomponent para tooltip notification</a></li>
 </ul>
 
 Los ficheros de los componentes están ubicados en <code>src/js</code>. Lo único que necesitamos es su ruta para poder incluirlos en las stories
@@ -213,7 +213,7 @@ TabItem2.args = {
 
 ## Arrancar proyecto en local
 
-Aunque puedes ver el <a href="../../experimentos/storybook/?path=/story/canvas-canvasdraw--canvas-1">build en el siguiente enlace</a> también puedes <a href="https://github.com/ivanalbizu/storybook-native-webcomponent" target="_blank" rel="noopener">clonarte el repo</a> y hacer las pruebas localmente
+Aunque puedes ver el <a href="https://ivanalbizu.eu/experimentos/storybook/?path=/story/canvas-canvasdraw--canvas-1">build en el siguiente enlace</a> también puedes <a href="https://github.com/ivanalbizu/storybook-native-webcomponent">clonarte el repo</a> y hacer las pruebas localmente
 
 Instalación de dependencias
 
