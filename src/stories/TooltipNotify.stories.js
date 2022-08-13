@@ -1,7 +1,7 @@
 import { TooltipNotify } from '../js/tooltip/tooltip-notify';
 
 export default {
-  title: 'Tooltip/tip',
+  title: 'Tooltip/tooltip',
   component: TooltipNotify,
   argTypes: {
     fill: { control: 'color' },
