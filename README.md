@@ -213,7 +213,7 @@ TabItem2.args = {
 
 ## Arrancar proyecto en local
 
-Aunque puedes ver el <a href="https://ivanalbizu.eu/experimentos/storybook/?path=/story/canvas-canvasdraw--canvas-1">build en el siguiente enlace</a> también puedes <a href="https://github.com/ivanalbizu/storybook-native-webcomponent">clonarte el repo</a> y hacer las pruebas localmente
+Puedes ver el <a href="https://ivanalbizu.eu/experimentos/storybook/?path=/story/canvas-canvasdraw--canvas-1">build en el siguiente enlace</a>
 
 Instalación de dependencias
 
